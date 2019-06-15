@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+      <link rel="stylesheet" type="text/css" href="static/css/font-awesome.min.css"/>
+       <link href="//cdn.bootcss.com/element-ui/2.4.0/theme-chalk/index.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="//unpkg.com/iview/dist/styles/iview.css">
+    <title>共享师资</title>
+  </head>
+  
+ <!-- <script src="https://code.jquery.com/jquery-1.8.0.min.js"></script>-->
+ <script type="text/javascript">
+ var BrowserMatch = {
+          init: function() {
+              this.browser = this.getBrowser().browser || "An Unknown Browser";
+              this.version = this.getBrowser().version || "An Unknown Version";
+              
+          },
+         
+          getBrowser: function() {
+              var rMsie = /(msie\s|trident\/7)([\w\.]+)/;
+              var rTrident = /(trident)\/([\w.]+)/;
+              var rFirefox = /(firefox)\/([\w.]+)/;
+              var rOpera = /(opera).+version\/([\w.]+)/;
+              var rNewOpera = /(opr)\/(.+)/;
+              var rChrome = /(chrome)\/([\w.]+)/;
+              var rSafari = /version\/([\w.]+).*(safari)/;
+              var ua = navigator.userAgent.toLowerCase();
+              var matchBS, matchBS2;
+              matchBS = rMsie.exec(ua);
+              if (matchBS != null) {
+                  matchBS2 = rTrident.exec(ua);
+                  if (matchBS2 != null) {
+                      switch (matchBS2[2]) {
+                      case "4.0":
+                          return {
+                              browser:
+                              "IE",
+                              version: "8"
+                          };
+                          break;
+                      case "5.0":
+                          return {
+                              browser:
+                              "IE",
+                              version: "9"
+                          };
+                          break;
+                      case "6.0":
+                          return {
+                              browser:
+                              "IE",
+                              version: "10"
+                          };
+                          break;
+                      case "7.0":
+                          return {
+                              browser:
+                              "IE",
+                              version: "11"
+                          };
+                          break;
+                      default:
+                          return {
+                              browser:
+                              "IE",
+                              version: "Undefined"
+                          };
+                      }
+                  } else {
+                      return {
+                          browser: "IE",
+                          version: matchBS[2] || "0"
+                      };
+                  }
+              }
+              matchBS = rFirefox.exec(ua);
+              if ((matchBS != null) && (!(window.attachEvent)) && (!(window.chrome)) && (!(window.opera))) {
+                  return {
+                      browser: matchBS[1] || "",
+                      version: matchBS[2] || "0"
+                  };
+              }
+              matchBS = rOpera.exec(ua);
+              if ((matchBS != null) && (!(window.attachEvent))) {
+                  return {
+                      browser: matchBS[1] || "",
+                      version: matchBS[2] || "0"
+                  };
+              }
+              matchBS = rChrome.exec(ua);
+              if ((matchBS != null) && ( !! (window.chrome)) && (!(window.attachEvent))) {
+                  matchBS2 = rNewOpera.exec(ua);
+                  if (matchBS2 == null) {
+                      return {
+                          browser: matchBS[1] || "",
+                          version: matchBS[2] || "0"
+                      };
+                  } else {
+                      return {
+                          browser: "Opera",
+                          version: matchBS2[2] || "0"
+                      };
+                  }
+              }
+              matchBS = rSafari.exec(ua);
+              if ((matchBS != null) && (!(window.attachEvent)) && (!(window.chrome)) && (!(window.opera))) {
+                  return {
+                      browser: matchBS[2] || "",
+                      version: matchBS[1] || "0"
+                  };
+              }
+          }
+      };
+      BrowserMatch.init();
+ 	
+ 	if(BrowserMatch.browser=='IE'&&BrowserMatch.version<=9){
+ 			alert('您的浏览器版本过低，请下载新版本浏览器');
+ 	}
+  
+ 	
+ 	
+ </script>
+ 
+ 
+  <style type="text/css">
+  	*{
+  		padding: 0;
+  		margin: 0;
+  	}
+  </style>
+  <body>
+    <div id="app"></div>
+    <script src="//imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.2.2.js" charset="utf-8"></script>;
+    <script type="text/javascript" src="//res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+    <script src="//cdn.bootcss.com/vue/2.5.2/vue.min.js"></script>
+    <script src="//cdn.bootcss.com/vue-router/3.0.1/vue-router.min.js"></script>
+    <!-- <script src="https://unpkg.com/element-ui@2.4.5/lib/index.js"></script> -->
+    <script src="//cdn.bootcss.com/element-ui/2.4.0/index.js"></script>
+    <script src="//cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+<!--    <script src="https://cdn.bootcss.com/qs/6.5.2/qs.min.js"></script>-->
+    <script src="//cdn.bootcss.com/vuex/3.0.1/vuex.js"></script>
+    <script src="//cdn.bootcss.com/iview/2.14.0/iview.min.js"></script>
+    <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- built files will be auto injected -->
+  </body>
+
+</html>
